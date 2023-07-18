@@ -1,40 +1,68 @@
-// 1
+//1
 
-const num1 = Number(prompt);
-const num2 = Number(prompt);
-if (num1<=1 && num2>+3) {
-    console.llog('it fits');
-} else {
-    console.log("it doesn't fit");
+function toSquare(num) {
+    return num*num*num;
 }
 
-// 2
+console.log(`${toSquare(2)}, ${toSquare(3)}`);
 
-let test = true;
-// if (test === true) {
-// console.log('+++');
-// } else {
-// console.log('---');
-// }
+//2
 
-test===true ? console.log('+++') : console.log('---');
+const number = Number(prompt('Input NUMBER'));
+let salary;
 
-// 3
-
-let day;
-
-if (day<=10) {
-    console.log("It's in first decade");
-} else if (day<=20 && day>10) {
-    console.log("It's in the second decade");
+if (typeof number != "number") {
+    alert('Its not a number');
 } else {
-    console.log("It's in the third decade");
+    salary = number - countTaxes(number);
 }
 
-// 4
+console.log(`Размер заработной платы за вычетом налогов равен ${salary}`);
 
-let userNumber = Number(prompt());
-console.log(userNumber%10);
-userNumber = Math.floor(userNumber/10);
-console.log(userNumber%10);
-console.log(Math.floor(userNumber/10));
+function countTaxes(money) {
+    return money*0.13;
+}
+
+//3
+
+const number1 = Number(prompt('1'));
+const number2 = Number(prompt('2'));
+const number3 = Number(prompt('3'));
+
+console.log(maxNumber(number1, number2, number3));
+
+function maxNumber(num1, num2, num3) {
+    let max = num1;
+    if (num2>max) {
+        max=num2;
+    } else if (num3>max) {
+        max = num3;
+    }
+    return max;
+}
+
+//4
+
+function sum(a, b) {
+    return a+b;
+}
+
+function substraction(a, b) {
+    if (a>b) {
+        return a-b;
+    } 
+    return b-a;
+}
+
+function multiplication(a, b) {
+    return a*b;
+}
+
+function division(a, b) {
+    if (a/b) {
+        return a/b;
+    } 
+    return b/a;
+}
+
+console.log(sum(3,5), substraction(3,5), multiplication(3,5), division(3,5));
